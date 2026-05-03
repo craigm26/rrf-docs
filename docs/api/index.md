@@ -13,7 +13,7 @@ The v2 API is the only supported API — v1 was removed when earlier RCAN protoc
     All integrations must use `/v2/` endpoints documented below.
     If you use OpenCastor, ensure your install calls `/v2/` endpoints — check the [OpenCastor docs](https://opencastor.com/docs/).
 
-For the current RCAN protocol version accepted by the registry, see the [live compatibility matrix](https://rcan.dev/compatibility).
+For the RCAN protocol version accepted by the registry, see the [live compatibility matrix](https://rcan.dev/compatibility).
 
 ---
 
@@ -90,6 +90,8 @@ Returns the complete registry record for a robot. The RRN must follow the 12-dig
   "registered_at": "2026-03-27T00:00:00.000Z"
 }
 ```
+
+> **Note:** `rcan_version` is accepted on registration but is not echoed in GET responses — see [rcan.dev/compatibility](https://rcan.dev/compatibility) for the current accepted value.
 
 ---
 
@@ -282,6 +284,8 @@ Get AI harness record by RHN. Returns the full registry record for an AI harness
 }
 ```
 
+> **Note:** `rcan_version` is accepted on registration but is not echoed in GET responses — see [rcan.dev/compatibility](https://rcan.dev/compatibility) for the current accepted value.
+
 ---
 
 ## Unified Registry
@@ -314,6 +318,8 @@ Returns a unified listing of all registered entities (robots, components, models
   "entity_types_count": { "robot": 1, "component": 1, "model": 1, "harness": 1 }
 }
 ```
+
+> **Note:** the per-entry `summary` object reflects entity-type-specific fields and does not include `rcan_version` — see [rcan.dev/compatibility](https://rcan.dev/compatibility) for current protocol versions.
 
 ---
 

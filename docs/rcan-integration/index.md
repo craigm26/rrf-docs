@@ -70,8 +70,8 @@ POST /api/v1/challenge
 **Step 3 — Robot signs nonce with ML-DSA-65 key:**
 
 ```bash
-# Same key used for RCAN message signing
-signature = ed25519_sign(private_key, nonce)
+# Same ML-DSA-65 key used for RCAN message signing
+signature = ml_dsa_sign(private_key, nonce)
 ```
 
 **Step 4 — Submit proof:**

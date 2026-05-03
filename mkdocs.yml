@@ -1,11 +1,3 @@
-# Per-site fields — replace before first commit:
-#   RRF Docs        e.g. "RCAN Docs"
-#   https://docs.robotregistryfoundation.org         e.g. "https://docs.rcan.dev"
-#   Robot Registry Foundation documentation — registry, federation, governance, verification. one-line summary
-#   craigm26/rrf-docs        e.g. "craigm26/rcan-docs"
-#   https://github.com/craigm26/rrf-docs         full GitHub URL
-#   #1e40af      brand primary, e.g. "#3b82f6"
-#   #3b82f6       brand accent, e.g. "#22d3ee"
 site_name: RRF Docs
 site_url: https://docs.robotregistryfoundation.org
 site_description: Robot Registry Foundation documentation — registry, federation, governance, verification.

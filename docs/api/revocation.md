@@ -14,7 +14,7 @@ Robot identity revocation and public key management endpoints. Defined by **GAP-
 
 ---
 
-## `GET /api/v1/robots/:rrn/revocation-status`
+## `GET /api/v1/robots/{rrn}/revocation-status`
 
 **Auth:** None (public)
 
@@ -64,7 +64,7 @@ Returns the current revocation status of a robot. Robots MUST check this endpoin
 
 ---
 
-## `POST /api/v1/robots/:rrn/revoke`
+## `POST /api/v1/robots/{rrn}/revoke`
 
 **Auth:** Bearer JWT — role: creator or registry admin
 
@@ -105,7 +105,7 @@ Marks a robot as revoked or suspended. Requires registry admin or verified owner
 
 ---
 
-## `GET /api/v1/robots/:rrn/keys`
+## `GET /api/v1/robots/{rrn}/keys`
 
 **Auth:** None (public)
 
@@ -160,7 +160,7 @@ Returns the JSON Web Key Set (JWKS, RFC 7517) for all signing keys associated wi
 
 ## MessageType 19 — ROBOT_REVOCATION Broadcast
 
-When a robot is revoked via `POST /api/v1/robots/:rrn/revoke`, the registry broadcasts a `ROBOT_REVOCATION` message (MessageType 19, RCAN protocol §13.4) to all registered peers. Receiving robots **MUST**:
+When a robot is revoked via `POST /api/v1/robots/{rrn}/revoke`, the registry broadcasts a `ROBOT_REVOCATION` message (MessageType 19, RCAN protocol §13.4) to all registered peers. Receiving robots **MUST**:
 
 - Invalidate all cached consent grants from the revoked RRN
 - Invalidate the revoked robot's cached public key material
@@ -192,8 +192,8 @@ When a robot is revoked via `POST /api/v1/robots/:rrn/revoke`, the registry broa
 
 | Path | Description |
 |---|---|
-| `/api/v1/robots/:rrn` | Full robot record (includes `revocation_status`, `key_id`) |
-| `/api/v1/robots/:rrn/keys` | JWKS for delegation chain verification (this page) |
+| `/api/v1/robots/{rrn}` | Full robot record (includes `revocation_status`, `key_id`) |
+| `/api/v1/robots/{rrn}/keys` | JWKS for delegation chain verification (this page) |
 | `/api/v1/public-keys` | Registry-wide signing keys for offline caching (GAP-06) |
 
 [Back to API Reference](index.md)
