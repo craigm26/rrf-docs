@@ -1,0 +1,90 @@
+# Per-site fields — replace before first commit:
+#   RRF Docs        e.g. "RCAN Docs"
+#   https://docs.robotregistryfoundation.org         e.g. "https://docs.rcan.dev"
+#   Robot Registry Foundation documentation — registry, federation, governance, verification. one-line summary
+#   craigm26/rrf-docs        e.g. "craigm26/rcan-docs"
+#   https://github.com/craigm26/rrf-docs         full GitHub URL
+#   #1e40af      brand primary, e.g. "#3b82f6"
+#   #3b82f6       brand accent, e.g. "#22d3ee"
+site_name: RRF Docs
+site_url: https://docs.robotregistryfoundation.org
+site_description: Robot Registry Foundation documentation — registry, federation, governance, verification.
+site_author: Craig Merry
+repo_name: craigm26/rrf-docs
+repo_url: https://github.com/craigm26/rrf-docs
+edit_uri: ""
+
+theme:
+  name: material
+  logo: assets/logo.svg
+  favicon: assets/favicon.svg
+  palette:
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+    - search.suggest
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - toc.follow
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+
+# Per-site nav added during migration phases.
