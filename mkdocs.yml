@@ -57,6 +57,7 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
       type: timeago
+      fallback_to_build_date: true
 
 markdown_extensions:
   - admonition
@@ -86,5 +87,11 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-
-# Per-site nav added during migration phases.
+  - API:
+    - Overview: api/index.md
+    - Registry Tiers: api/registry-tiers.md
+    - Revocation: api/revocation.md
+  - Federation: federation/index.md
+  - Governance: governance/index.md
+  - Verification: verification/index.md
+  - RCAN Integration: rcan-integration/index.md
