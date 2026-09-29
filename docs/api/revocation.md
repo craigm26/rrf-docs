@@ -1,5 +1,8 @@
 # Revocation & Key API
 
+!!! warning "Not implemented on robotregistryfoundation.org"
+    The `/api/v1/...` endpoints on this page are protocol design, not a live API. The registry retired its v1 API (every `/v1/*` path returns 410), and the root host named here (`registry.opencastor.com`) does not resolve. The live API is documented at [API](index.md). Revocation that does exist today: `POST /v2/robots/{rrn}/revoke-key`, `POST /v2/robots/{rrn}/rotate-key`, and `GET /v2/revocations`.
+
 Robot identity revocation and public key management endpoints. Defined by **GAP-02** (Robot Identity Revocation, §13) and **GAP-09** (Key Lifecycle, §8.6) of the RCAN protocol.
 
 | Spec | MessageType | Cache TTL |
