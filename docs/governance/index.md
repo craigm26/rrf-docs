@@ -1,9 +1,11 @@
 # Robot Registry Foundation
 
-Draft Founding Charter · Seeking co-founders, endorsing organizations, and stakeholder input.
+Draft Founding Charter · Seeking co-founders, stakeholder input, and review and collaboration from standards bodies and testing labs.
+
+> **Status, 2026-09-29.** Draft charter for a proposed foundation. RCAN and the registry currently have one maintainer and no board, co-founders, endorsing organizations or partners. Nothing here has had third-party verification. RCAN, with the registry, has been proposed to the AAIF (Linux Foundation) as a Sandbox project ([aaif/project-proposals#43](https://github.com/aaif/project-proposals/issues/43)); the proposal has not been accepted. Conformance is not certification.
 
 !!! warning "DRAFT"
-    Last revised 2026-03-04 · [Discuss on GitHub issue #13](https://github.com/continuonai/rcan-spec/issues/13)
+    Last revised 2026-03-04 · Discuss in [RobotRegistryFoundation/rcan-spec issues](https://github.com/RobotRegistryFoundation/rcan-spec/issues) (the original thread, [#13](https://github.com/RobotRegistryFoundation/rcan-spec/issues/13), is closed)
 
 ---
 
@@ -123,10 +125,9 @@ The RRF is exploring the following incorporation options:
 
 | Role | What to do |
 |---|---|
-| Co-founder | Comment on [GitHub issue #13](https://github.com/continuonai/rcan-spec/issues/13) expressing intent to co-found; include your organization name and primary interest |
-| Endorsing organization | Post a short statement of endorsement on issue #13; no financial commitment required at this stage |
-| Technical contributor | Open a pull request against `docs/governance/` with proposed amendments — [rcan-spec repo](https://github.com/continuonai/rcan-spec) |
-| Standards body representative | Contact the RCAN maintainers directly via the repository to discuss formal liaison |
-| Interested observer | Star the rcan-spec repository and subscribe to [issue #13](https://github.com/continuonai/rcan-spec/issues/13) for updates |
+| Co-founder | Open an issue on [RobotRegistryFoundation/rcan-spec](https://github.com/RobotRegistryFoundation/rcan-spec/issues) (issue #13, where this charter was first discussed, is closed); include your organization name and primary interest |
+| Technical contributor | Open a pull request against `docs/governance/` with proposed amendments — [rcan-spec repo](https://github.com/RobotRegistryFoundation/rcan-spec) |
+| Standards body or testing lab | Review and collaboration are welcome; contact the maintainer via the repository |
+| Interested observer | Star the rcan-spec repository and watch the repository for updates |
 
 > This charter was drafted by the RCAN specification maintainers as a starting point for community discussion. It does not represent a final legal document. Nothing herein creates any binding obligation on any party.
