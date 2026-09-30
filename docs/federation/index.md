@@ -1,5 +1,8 @@
 # Federation Protocol
 
+!!! note "Status, 2026-09-29"
+    This page describes the federation design. Today there is one registry node (the root at robotregistryfoundation.org), no authoritative nodes, and no delegated namespaces.
+
 The Robot Registry is not a single database. It is a federated network of nodes that cross-verify, stay in sync, and ensure no single point of failure can disrupt robot identity resolution.
 
 For full technical specification, see [rcan.dev §17 Distributed Registry Node Protocol](https://rcan.dev).
@@ -21,8 +24,8 @@ This mirrors how DNS works for domain names: a hierarchy of authority, distribut
 ### Root Node
 
 **Operated by:** RRF only  
-**Authority:** Full — issues new RRNs, delegates namespace, signs certificates  
-**Count:** 1 (operated by RRF)
+**Authority:** Full — issues new RRNs, delegates namespace, signs its append-only log ([`/.well-known/rrf-root-pubkey.pem`](https://robotregistryfoundation.org/.well-known/rrf-root-pubkey.pem))  
+**Count:** 1 (operated by RRF, which today is one maintainer)
 
 The authoritative root of the registry hierarchy. Operated by the RRF. Signs all canonical RRN assignments and issues namespace delegations to authoritative nodes.
 

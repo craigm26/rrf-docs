@@ -1,127 +1,55 @@
 # How Verification Works
 
-Not all registry entries are equal. The RRF's 4-tier verification system lets you understand exactly how much confidence to place in a robot's identity record.
+A registry record says who registered a robot and what they declared. Verification tiers say what, if anything, has been checked beyond that. They are recorded as `verification_status` on the robot record.
 
-| Tier | Icon | Title |
+!!! warning "What verification is not"
+    No tier certifies a robot, tests it, or says it is safe. Conformance is not certification. Compliance evidence is not regulatory sufficiency. The registry currently has one maintainer and no third-party auditors.
+
+| Tier | `verification_status` | What was checked |
 |---|---|---|
-| Tier 1 | ⬜ | Community |
-| Tier 2 | 🟡 | Verified |
-| Tier 3 | 🔵 | Certified |
-| Tier 4 | ✅ | Accredited |
+| 0 | `unverified` | The registration was signed with the key it declares (ML-DSA-65 + Ed25519). Nothing else. |
+| 1 | `community` | A maintainer looked at the record. No independent check. |
+| 2 | `manufacturer_claimed` | A DNS TXT record on the manufacturer's domain matches the robot. Proves control of that domain. |
+| 3 | `manufacturer_verified` | The DNS TXT check, plus a signed manufacturer attestation and the robot's RURI manifest. |
+
+Tiers move one step at a time and never skip. Promotion to tiers 2 and 3 is a signed request to `POST /v2/robots/{rrn}/verify-tier`; tier 1 is set by a maintainer.
 
 ---
 
-## ⬜ Tier 1 — Community
+## `unverified`
 
-**What it means:** Self-reported. Robot exists and was submitted by a real person. No independent vetting or cross-checking.
+Every new registration starts here. Registration must be signed, so the record is bound to a key, but nobody has checked the name, manufacturer or model.
 
-**Who qualifies:** Anyone. Submit a robot via the registry form and it immediately receives Community tier.
+## `community`
 
-**Trust level:** Lowest. Do not rely on Community-tier records for safety-critical decisions.
+A maintainer has looked at the record. This is a human sanity check, not an audit. Do not rely on it for safety-critical decisions.
 
-**How to get it:** Automatic on submission. No additional steps required.
+## `manufacturer_claimed`
 
-**Requirements:**
+The manufacturer publishes a DNS TXT record binding its domain to the robot. The registry resolves it and records the result. This proves that whoever controls the domain agrees; it says nothing about the robot's behaviour.
 
-- Valid submission form
-- Contact email
-- Plausible manufacturer and model name
+## `manufacturer_verified`
 
-**Use cases:**
-
-- Open-source hobby robots
-- Research prototypes
-- First-generation commercial robots establishing presence in the registry
+In addition to the DNS TXT record, the manufacturer signs an attestation and the robot's RURI manifest matches. This is the strongest identity statement the registry makes today. It is still an identity statement, not a safety or conformance statement.
 
 ---
 
-## 🟡 Tier 2 — Verified
+## Earlier tier names
 
-**What it means:** Basic verification: the manufacturer exists, the model is real, and the serial number has been cross-checked where possible.
+Earlier versions of this page described "Verified", "Certified" and "Accredited" tiers, including RRF-issued conformance certificates renewed annually. Those were never implemented and have been removed. The rcan.dev registry (a separate node) still uses the values `verified`, `certified` and `accredited`; there they mean an owner-requested upgrade with an evidence URL, not a certification.
 
-**Who qualifies:** Any robot whose manufacturer can be independently confirmed as a real entity.
+## Physical assurance
 
-**Trust level:** Moderate. Manufacturer and model have been confirmed, but the specific robot unit has not been inspected.
-
-**How to get it:** The RRF reviews the submission against public records and available manufacturer documentation.
-
-**Requirements:**
-
-- Manufacturer is a registered legal entity
-- Model appears in manufacturer public records or product pages
-- Serial number format is consistent with manufacturer's documented scheme
-
-**Use cases:**
-
-- Commercial robots from known manufacturers
-- Robots used in regulated environments requiring documentation
-- Insurance and procurement workflows
-
----
-
-## 🔵 Tier 3 — Certified
-
-**What it means:** The manufacturer organization itself has been verified by the RRF. All robots from this manufacturer automatically carry Certified verification.
-
-**Who qualifies:** Robots from manufacturers that have gone through the RRF manufacturer verification program.
-
-**Trust level:** High. The manufacturer has signed agreements with the RRF and takes responsibility for the accuracy of all registrations under their namespace.
-
-**How to get it:** Manufacturer applies for RRF membership at Supporting Member tier. RRF verifies legal entity, reviews governance documents, and signs a data accuracy agreement.
-
-**Requirements:**
-
-- Manufacturer is an RRF Supporting Member
-- Signed data accuracy agreement
-- Designated registry contact at the manufacturer
-- Manufacturer-issued serial numbers follow documented scheme
-- RCAN §21 registry handshake recommended (RRN↔RURI canonical mapping)
-
-**Use cases:**
-
-- Robots deployed in enterprise environments
-- Robots subject to EU AI Act registration requirements
-- Robots used in safety-critical infrastructure
-
----
-
-## ✅ Tier 4 — Accredited
-
-**What it means:** Full conformance audit. The robot has passed the RCAN conformance test suite (L1/L2/L3/L4) and carries a signed conformance certificate.
-
-**Who qualifies:** Robots that implement the RCAN protocol and have passed all four conformance levels.
-
-**Trust level:** Highest. The robot's identity, communication protocol, reporting, and registry integration have all been independently audited.
-
-**How to get it:** Robot owner runs the RCAN conformance test suite and submits results. RRF issues a signed certificate with a cryptographic root of trust.
-
-**Requirements:**
-
-- Must hold Certified tier
-- Must pass RCAN L1 (Identity), L2 (Communication), L3 (Reporting), and L4 (Registry Integration) conformance tests
-- RURI must be present and resolvable per RCAN §21 (Robot Registry Integration)
-- RRN↔RURI ownership proof submitted per §21.3
-- Certificate must be renewed annually or after major firmware updates
-
-**Use cases:**
-
-- Robots deployed in regulated environments requiring verifiable identity
-- Swarm safety applications
-- Robots subject to ISO/TC 299 compliance
-- Insurance underwriting for autonomous systems
-
----
+A robot record may also carry a self-declared physical assurance level (A1–A3, RCAN Appendix C). That is a separate field from verification, is always labelled self-declared, and A3 is shown only with a third-party evidence link. See [robotregistryfoundation.org/physical-assurance](https://robotregistryfoundation.org/physical-assurance/).
 
 ## RCAN §21 — Robot Registry Integration
 
-Certified and Accredited robots should implement the RCAN §21 registry handshake for canonical RRN↔RURI mapping and ownership proof. Required for Accredited tier.
-
-[Read §21](https://rcan.dev/spec/section-21/)
+Robots that implement RCAN should use the §21 registry handshake for canonical RRN↔RURI mapping and ownership proof. [Read §21](https://docs.rcan.dev/spec/section-21/)
 
 ---
 
 ## Ready to register?
 
-All new robots start at Community tier. Verification upgrades are requested after registration.
+All new robots start at `unverified`. Verification upgrades are requested after registration.
 
 [Register Your Robot](https://robotregistryfoundation.org/registry/submit/)

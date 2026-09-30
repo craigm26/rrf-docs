@@ -1,5 +1,8 @@
 # Registry Tier API
 
+!!! warning "Not implemented on robotregistryfoundation.org"
+    The `/api/v1/...` endpoints on this page are protocol design, not a live API. The registry retired its v1 API (every `/v1/*` path returns 410), and the root host named here (`registry.opencastor.com`) does not resolve. The live API is documented at [API](index.md). Revocation that does exist today: `POST /v2/robots/{rrn}/revoke-key`, `POST /v2/robots/{rrn}/rotate-key`, and `GET /v2/revocations`.
+
 Federation endpoints for the RCAN protocol registry trust hierarchy (GAP-14). Enables cross-registry command validation via signed trust anchors.
 
 For protocol versions, see [rcan.dev/compatibility](https://rcan.dev/compatibility).
