@@ -2,7 +2,7 @@
 
 Draft Founding Charter · Seeking co-founders, stakeholder input, and review and collaboration from standards bodies and testing labs.
 
-> **Status, 2026-09-29.** Draft charter for a proposed foundation. RCAN and the registry currently have one maintainer and no board, co-founders, endorsing organizations or partners. Nothing here has had third-party verification. RCAN, with the registry, has been proposed to the AAIF (Linux Foundation) as a Sandbox project ([aaif/project-proposals#43](https://github.com/aaif/project-proposals/issues/43)); the proposal has not been accepted. Conformance is not certification.
+> **Status, 2026-10-16.** Draft charter for a proposed foundation. RCAN and the registry currently have one maintainer and no board, co-founders, endorsing organizations or partners. Nothing here has had third-party verification. RCAN, with the registry, was proposed to the AAIF (Linux Foundation) as a Sandbox project ([aaif/project-proposals#43](https://github.com/aaif/project-proposals/issues/43)). On 2026-10-02 the AAIF closed the proposal as declined, labelled "Too Early", citing a single maintainer, no independent signal of adoption, no license file in the spec repository and this draft charter. The maintainer intends to resubmit once those requirements are met. There is no neutral steward today. Conformance is not certification.
 
 !!! warning "DRAFT"
     Last revised 2026-03-04 · Discuss in [RobotRegistryFoundation/rcan-spec issues](https://github.com/RobotRegistryFoundation/rcan-spec/issues) (the original thread, [#13](https://github.com/RobotRegistryFoundation/rcan-spec/issues/13), is closed)
