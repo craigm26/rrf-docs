@@ -1,11 +1,11 @@
 # Federation Protocol
 
-!!! note "Status, 2026-09-29"
+!!! note "Status, 2026-10-16"
     This page describes the federation design. Today there is one registry node (the root at robotregistryfoundation.org), no authoritative nodes, and no delegated namespaces.
 
-The Robot Registry is not a single database. It is a federated network of nodes that cross-verify, stay in sync, and ensure no single point of failure can disrupt robot identity resolution.
+The Robot Registry is designed as a federated network of nodes that cross-verify and stay in sync, so that no single point of failure can disrupt robot identity resolution. Today it is one node.
 
-For full technical specification, see [rcan.dev §17 Distributed Registry Node Protocol](https://rcan.dev).
+For the full technical specification, see [RCAN §17 Distributed Registry Node Protocol](https://docs.rcan.dev/spec/section-17/).
 
 ---
 
@@ -63,14 +63,17 @@ Partial, TTL-based cache of registry records. Trades completeness and freshness 
 
 ## Run Your Own Registry Node
 
-Any organization can run a resolver or cache node. This improves the resilience of robot identity resolution for your fleet, reduces latency in your deployment environment, and ensures your robots can resolve identities even when disconnected from the internet.
+!!! note "Not available yet"
+    There is no resolver sync and no public node directory yet. The steps below describe the design.
+
+The design lets any organization run a resolver or cache node. This improves the resilience of robot identity resolution for your fleet, reduces latency in your deployment environment, and ensures your robots can resolve identities even when disconnected from the internet.
 
 1. **Choose your node type:** Most organizations start with a Resolver node — a full read-replica that syncs from the root.
-2. **Deploy the registry software:** The RRF registry software will be open source (OSI-approved license). Distribution packages (Docker / Helm) are in preparation — star the GitHub repo to be notified on release.
+2. **Deploy the registry software:** The registry source is public at [craigm26/RobotRegistryFoundation](https://github.com/craigm26/RobotRegistryFoundation). It has no license file yet, so it is not yet open source, and there are no distribution packages.
 3. **Configure synchronization:** Point your node at the RRF root or an existing resolver. Sync interval is configurable; default is 5 minutes.
 4. **Register your node (optional):** Register your resolver with the RRF to be listed in the public node directory and receive update notifications.
 
-[Full technical documentation at rcan.dev §17](https://rcan.dev)
+[Full technical documentation: RCAN §17](https://docs.rcan.dev/spec/section-17/)
 
 ---
 
