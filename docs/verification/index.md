@@ -40,7 +40,7 @@ Earlier versions of this page described "Verified", "Certified" and "Accredited"
 
 ## Physical assurance
 
-A robot record may also carry a self-declared physical assurance level (A1–A3, RCAN Appendix C). That is a separate field from verification, is always labelled self-declared, and A3 is shown only with a third-party evidence link. See [robotregistryfoundation.org/physical-assurance](https://robotregistryfoundation.org/physical-assurance/).
+A robot record may also carry a self-declared physical assurance level: BE-1 (Declared), BE-2 (Enforced) or BE-3 (Assured), as named in the [Bounded Embodiment](https://github.com/RobotRegistryFoundation/bounded-embodiment) test method and RCAN Appendix C since 2026-10-08. The API field `assurance_level` still uses the values `A1`, `A2` and `A3` for BE-1, BE-2 and BE-3. The level is a separate field from verification, is always labelled self-declared, and BE-3 is shown only with a third-party evidence link. See [robotregistryfoundation.org/physical-assurance](https://robotregistryfoundation.org/physical-assurance/).
 
 ## RCAN §21 — Robot Registry Integration
 
