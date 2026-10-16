@@ -222,7 +222,7 @@ Full [RCAN protocol](https://rcan.dev/compatibility) conformance · ML-DSA-65 PQ
 
 - [RCAN §21 — Registry Integration](https://rcan.dev/spec/section-21/)
 - [OpenCastor](https://opencastor.com)
-- [OpenCastor SDK — Getting Started](https://opencastor.com/docs/getting-started/)
+- [OpenCastor quickstart](https://docs.opencastor.com/getting-started/quickstart/)
 - [RCAN protocol spec](https://rcan.dev)
 - [ROBOT.md — one-file robot manifest](https://robotmd.dev)
 

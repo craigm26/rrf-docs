@@ -30,7 +30,7 @@ Each manufacturer operates its own robot registry under its own terms. There is 
 
 **2. No dispute resolution**
 
-If two organizations claim the same Robot Registry Number prefix, or if a manufacturer's identity is impersonated in a third-party registry, there is currently no neutral body to adjudicate the conflict. Legal action in national courts — slow, expensive, and jurisdictionally fragmented — is the only recourse.
+If two organizations claim the same Robot Registration Number prefix, or if a manufacturer's identity is impersonated in a third-party registry, there is currently no neutral body to adjudicate the conflict. Legal action in national courts — slow, expensive, and jurisdictionally fragmented — is the only recourse.
 
 **3. No registry of last resort**
 
@@ -59,7 +59,7 @@ The founding board shall consist of **10 voting seats** plus non-voting observer
 | Seats | Constituency | Selection |
 |---|---|---|
 | 2 | Robot manufacturers | Elected by manufacturer member organizations; rotating 2-year terms; no single manufacturer may hold both seats simultaneously |
-| 2 | Safety standards bodies | Designated by ISO/TC 299 (1 seat) and A3 — Association for Advancing Automation (1 seat) |
+| 2 | Safety standards bodies | Proposed: designated by ISO/TC 299 (1 seat) and A3, the Association for Advancing Automation (1 seat), if they agree. Neither has been approached. |
 | 2 | Academic / research institutions | Elected by academic member organizations |
 | 1 | Civil society | Elected by contributor-tier members |
 | 3 | Foundation general | Elected at large by all member classes combined |
@@ -130,4 +130,4 @@ The RRF is exploring the following incorporation options:
 | Standards body or testing lab | Review and collaboration are welcome; contact the maintainer via the repository |
 | Interested observer | Star the rcan-spec repository and watch the repository for updates |
 
-> This charter was drafted by the RCAN specification maintainers as a starting point for community discussion. It does not represent a final legal document. Nothing herein creates any binding obligation on any party.
+> This charter was drafted by the RCAN specification maintainer as a starting point for community discussion. It does not represent a final legal document. Nothing herein creates any binding obligation on any party.
